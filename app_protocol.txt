@@ -1,0 +1,59 @@
+--crear tarea
+Método HTTP: POST api.php/tasks
+r:{"name": "nombre tarea",
+	"duedate": "fecha(aaaa/mm/dd)",
+	"priority": "prioridad (entero)"
+}
+Respuesta:
+{"result_type": "new_task", "new_id": "value int"}
+
+--Actualizar nombre, duedate o priority
+NOTA> En todos los casos que siguen, 'tasks' es el nombre de la tabla que guarda las tareas, 'id' es un valor entero que indica el identificador de la tarea en cuestión.
+Método HTPP: PUT api.php/tasks/id
+r:{
+"id": "valor entero",
+"name": "Nombre tarea",
+"duedate": "aaaa/mm/dd",
+"priority": "valor entero"
+}
+
+Respuesta:
+{"result_type": "update_task", "id": "value int"}
+
+--completada
+Método HTPP: PUT api.php/tasks/id
+r:{
+"id": "valor entero",
+"completed": false/true
+}
+
+Respuesta:
+{"result_type": "update_task", "id": "value int"}
+
+--eliminada
+Método HTPP: PUT api.php/tasks/id
+r: {
+"id": "value",
+"trashed": true
+}
+
+Respuesta:
+{"result_type": "update_task", "id": "value int"}
+
+--Obtener todas las tareas
+Método HTTP: GET api.php/tasks/
+Respuesta: 
+Ejemplo: si hubiera tareas guardas
+[{"id":"1","name":"Task1","duedate":null,"completed":"0","trashed":"0","priority":"1"},{"id":"2","name":"Task 2","duedate":null,"completed":"0","trashed":"0","priority":"2"}]
+
+Ejemplo: si no hubiera tareas guardadas
+[]
+
+--Borrar definitivamente una tarea
+Método HTPP: DELETE api.php/tasks/id
+
+Respuesta:
+{"result_type": "deleted_task", "id": "value int"}
+
+--ERRORES:
+RETORNA HTTP STATUS CODE 404

@@ -1,0 +1,71 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+
+}
+
+button:hover
+{
+border-bottom: 4px solid blue;
+	color: blue;
+	
+
+}
+
+
+div.title
+{
+padding-left: 80px;
+background-color: #E0F7FA;
+height: 30px;
+font-family: Arial;
+font-size: 20px;
+}
+
+p{
+	font-size: 13px;
+}
+
+
+div#principal
+{
+box-shadow:0 0 6px #ccc, 0 12px 17px #eee inset;
+background: #DCDCDC; 
+height: 25px;
+color:  #1A237E;
+padding-left: 50px;
+display: block;
+font-family: "verdana";
+text-transform: uppercase;
+color: black;
+padding-top: 5px;
+}
+
+.opciones {
+
+margin-right: 20px;
+border: transparent;
+height: 4px;
+}
+.opciones2 {
+
+	text-align: left; 
+	float: right;  
+	margin-right: 15px;
+ margin-left:25px;
+
+border: transparent;
+height: 4px;
+ 
+	}
+
+
+.icono
+{
+color: #1A237E;
+}
+	div.cuerpo
+	{
+		margin-top: 12px;
+	}
